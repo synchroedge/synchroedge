@@ -1,229 +1,1675 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta property="og:title" content="SynchroEdge | BIM Modeling & Outsourcing" />
-  <meta property="og:description" content="Global BIM modeling and outsourcing partner for US, UK & Middle East construction firms." />
-  <meta property="og:type" content="website" />
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SynchroEdge | BIM Coordination Experts — NYC & NJ</title>
+<meta name="description" content="8 years. 60+ projects. Zero coordination failures. SynchroEdge delivers clash-free MEP coordination, Revit modeling, and construction documentation for architecture firms and contractors in NYC/NJ."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --black: #080C10;
+    --deep: #0D1117;
+    --panel: #111820;
+    --card: #151D26;
+    --border: #1E2A38;
+    --accent: #00C2FF;
+    --accent2: #FF6B2B;
+    --green: #00E5A0;
+    --white: #F0F4F8;
+    --muted: #5A7A94;
+    --text: #B8CCD8;
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'Syne', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+  }
 
-  <meta charset="UTF-8" />
-  <title>SynchroEdge | BIM Modeling & Outsourcing Partner</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  <meta name="description" content="SynchroEdge provides BIM modeling and BIM outsourcing services for construction firms in the US, UK, Middle East, and Europe." />
-  <meta name="keywords" content="BIM modeling services USA, BIM outsourcing UK, MEP BIM Middle East, offshore BIM India, Revit BIM services" />
+  html { scroll-behavior: smooth; }
 
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="manifest" href="site.webmanifest">
+  body {
+    background: var(--black);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
 
-  <script src="https://cdn.tailwindcss.com"></script>
+  /* ── NOISE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.4;
+  }
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 900;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    height: 72px;
+    background: rgba(8,12,16,0.92);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
 
-  <style>
-    body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-    .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.8s ease; }
-    .fade-in.show { opacity: 1; transform: none; }
-  </style>
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    letter-spacing: 3px;
+    color: var(--white);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--accent); }
+
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  .nav-cta {
+    background: var(--accent);
+    color: var(--black) !important;
+    padding: 10px 22px !important;
+    font-weight: 700 !important;
+    letter-spacing: 1px !important;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: #fff !important; color: var(--black) !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 120px 5% 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Grid lines background */
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,194,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,194,255,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: gridPulse 8s ease-in-out infinite;
+  }
+
+  @keyframes gridPulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+
+  /* Glow orb */
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(0,194,255,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-tag {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--accent);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-tag::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 10vw, 9rem);
+    line-height: 0.92;
+    color: var(--white);
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+
+  .hero h1 .accent { color: var(--accent); }
+  .hero h1 .accent2 { color: var(--accent2); }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    color: var(--text);
+    max-width: 580px;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .stat-block { border-left: 2px solid var(--accent); padding-left: 1.2rem; }
+  .stat-num {
+    font-family: var(--font-display);
+    font-size: 2.8rem;
+    color: var(--white);
+    letter-spacing: 2px;
+    line-height: 1;
+  }
+  .stat-num span { color: var(--accent); }
+  .stat-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: var(--black);
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: 0.9rem;
+    padding: 16px 36px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+    transition: all 0.2s;
+    position: relative;
+  }
+  .btn-primary:hover {
+    background: var(--white);
+    transform: translateY(-2px);
+  }
+  .btn-primary::after {
+    content: '→';
+    transition: transform 0.2s;
+  }
+  .btn-primary:hover::after { transform: translateX(4px); }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: var(--white);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 16px 36px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    border: 1px solid var(--border);
+    transition: all 0.2s;
+  }
+  .btn-secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 5%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .scroll-line {
+    width: 40px;
+    height: 1px;
+    background: var(--muted);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+  @keyframes scrollPulse {
+    0%, 100% { width: 40px; }
+    50% { width: 80px; }
+  }
+
+  /* ── MARQUEE ── */
+  .marquee-wrap {
+    background: var(--accent);
+    padding: 14px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .marquee-track {
+    display: inline-flex;
+    animation: marquee 20s linear infinite;
+  }
+  .marquee-item {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    letter-spacing: 3px;
+    color: var(--black);
+    padding: 0 3rem;
+  }
+  .marquee-dot { color: var(--black); opacity: 0.4; }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 120px 5%; }
+
+  .section-tag {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--accent);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-tag::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .section-h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    color: var(--white);
+    letter-spacing: 2px;
+    line-height: 1;
+    margin-bottom: 1.2rem;
+  }
+
+  .section-lead {
+    font-size: 1rem;
+    color: var(--text);
+    max-width: 560px;
+    line-height: 1.8;
+  }
+
+  /* ── PAIN SECTION ── */
+  .pain { background: var(--deep); }
+
+  .pain-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 4rem;
+    background: var(--border);
+  }
+
+  .pain-card {
+    background: var(--panel);
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+  .pain-card:hover { background: var(--card); }
+  .pain-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 0;
+    background: var(--accent2);
+    transition: height 0.3s;
+  }
+  .pain-card:hover::before { height: 100%; }
+
+  .pain-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .pain-card h3 {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.6rem;
+  }
+  .pain-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
+
+  .pain-callout {
+    background: linear-gradient(135deg, rgba(255,107,43,0.15), rgba(255,107,43,0.05));
+    border: 1px solid rgba(255,107,43,0.3);
+    padding: 2.5rem;
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);
+  }
+  .callout-num {
+    font-family: var(--font-display);
+    font-size: 4rem;
+    color: var(--accent2);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .callout-text h4 { color: var(--white); font-size: 1.1rem; font-weight: 700; margin-bottom: 0.4rem; }
+  .callout-text p { font-size: 0.9rem; color: var(--muted); }
+
+  /* ── SERVICES ── */
+  .services { background: var(--black); }
+
+  .services-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: end;
+    margin-bottom: 4rem;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    background: var(--border);
+  }
+
+  .service-card {
+    background: var(--panel);
+    padding: 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+    cursor: default;
+  }
+  .service-card:hover {
+    background: var(--card);
+    transform: translateY(-4px);
+  }
+
+  .service-num {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-icon-wrap {
+    width: 52px;
+    height: 52px;
+    background: rgba(0,194,255,0.08);
+    border: 1px solid rgba(0,194,255,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 0 100%);
+    transition: background 0.3s;
+  }
+  .service-card:hover .service-icon-wrap {
+    background: rgba(0,194,255,0.18);
+  }
+
+  .service-card h3 {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.7rem;
+    line-height: 1.3;
+  }
+  .service-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
+
+  .service-card .service-tag {
+    display: inline-block;
+    margin-top: 1.2rem;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--accent);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border: 1px solid rgba(0,194,255,0.2);
+    background: rgba(0,194,255,0.05);
+  }
+
+  /* ── PROCESS ── */
+  .process { background: var(--deep); overflow: hidden; }
+
+  .process-steps {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    position: relative;
+  }
+
+  .process-steps::before {
+    content: '';
+    position: absolute;
+    top: 36px;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  }
+
+  .process-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;
+    position: relative;
+    animation: fadeUp 0.6s ease forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .process-step:nth-child(1) { animation-delay: 0.1s; }
+  .process-step:nth-child(2) { animation-delay: 0.2s; }
+  .process-step:nth-child(3) { animation-delay: 0.3s; }
+  .process-step:nth-child(4) { animation-delay: 0.4s; }
+  .process-step:nth-child(5) { animation-delay: 0.5s; }
+
+  .step-circle {
+    width: 72px;
+    height: 72px;
+    border: 2px solid var(--accent);
+    background: var(--deep);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    position: relative;
+    clip-path: polygon(15px 0%, 100% 0%, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0% 100%, 0% 15px);
+  }
+
+  .process-step h4 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+  .process-step p { font-size: 0.78rem; color: var(--muted); line-height: 1.6; }
+
+  /* ── WHY US ── */
+  .why { background: var(--black); }
+
+  .why-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    margin-top: 4rem;
+  }
+
+  .why-visual {
+    position: relative;
+    height: 480px;
+  }
+
+  .bim-card {
+    position: absolute;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+  }
+
+  .bim-main {
+    top: 0; left: 0; right: 0;
+    background: var(--card);
+    border-color: rgba(0,194,255,0.3);
+  }
+
+  .bim-stat-card {
+    bottom: 20px;
+    right: 0;
+    width: 200px;
+    background: var(--accent);
+    border: none;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
+  }
+
+  .bim-stat-card .stat-n {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    color: var(--black);
+    line-height: 1;
+  }
+  .bim-stat-card .stat-l {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: rgba(0,0,0,0.6);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  .bim-badge {
+    bottom: 20px;
+    left: 0;
+    width: 160px;
+    background: rgba(0,229,160,0.1);
+    border-color: rgba(0,229,160,0.3);
+    text-align: center;
+  }
+  .bim-badge .badge-icon { font-size: 1.8rem; display: block; margin-bottom: 0.3rem; }
+  .bim-badge p { font-size: 0.75rem; color: var(--green); font-weight: 600; }
+
+  .code-block {
+    background: rgba(0,0,0,0.5);
+    border: 1px solid var(--border);
+    border-radius: 0;
+    padding: 1.2rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-top: 1rem;
+  }
+  .code-key { color: var(--accent); }
+  .code-val { color: var(--green); }
+  .code-str { color: #FFA07A; }
+
+  .why-list { list-style: none; }
+  .why-item {
+    display: flex;
+    gap: 1.2rem;
+    align-items: flex-start;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .why-item:first-child { border-top: 1px solid var(--border); }
+
+  .why-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(0,194,255,0.08);
+    border: 1px solid rgba(0,194,255,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+    clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 0 100%);
+  }
+
+  .why-item h4 { font-size: 0.95rem; font-weight: 700; color: var(--white); margin-bottom: 0.3rem; }
+  .why-item p { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+
+  /* ── CASE STUDIES ── */
+  .cases { background: var(--deep); }
+
+  .cases-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    background: var(--border);
+    margin-top: 4rem;
+  }
+
+  .case-card {
+    background: var(--panel);
+    padding: 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+  .case-card:hover { background: var(--card); }
+
+  .case-type {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--accent);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .case-type::before {
+    content: '';
+    width: 20px;
+    height: 1px;
+    background: var(--accent);
+    display: block;
+  }
+
+  .case-card h3 {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+  }
+  .case-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; }
+
+  .case-metrics {
+    display: flex;
+    gap: 1.5rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--border);
+  }
+  .metric { }
+  .metric-val {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .metric-label {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    color: var(--muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  /* ── FOUNDER ── */
+  .founder { background: var(--black); }
+
+  .founder-layout {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 5rem;
+    align-items: start;
+    margin-top: 4rem;
+  }
+
+  .founder-card {
+    width: 300px;
+    flex-shrink: 0;
+  }
+
+  .founder-photo-wrap {
+    width: 300px;
+    height: 360px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+    clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .founder-placeholder {
+    font-size: 5rem;
+    opacity: 0.2;
+  }
+
+  .founder-photo-label {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: var(--accent);
+    padding: 10px 16px;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--black);
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .founder-badges {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 1rem;
+  }
+  .f-badge {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    padding: 8px 12px;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--text);
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .f-badge::before {
+    content: '✓';
+    color: var(--green);
+    font-weight: 700;
+  }
+
+  .founder-content {}
+  .founder-content blockquote {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    color: var(--white);
+    line-height: 1.15;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+    border-left: 3px solid var(--accent);
+    padding-left: 1.5rem;
+  }
+  .founder-content blockquote span { color: var(--accent); }
+
+  .founder-bio { font-size: 0.95rem; color: var(--text); line-height: 1.85; margin-bottom: 1.5rem; }
+
+  .tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 1.5rem;
+  }
+  .tech-tag {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--accent);
+    padding: 5px 12px;
+    border: 1px solid rgba(0,194,255,0.25);
+    background: rgba(0,194,255,0.05);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* ── LEAD MAGNET ── */
+  .lead-magnet {
+    background: var(--panel);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 100px 5%;
+  }
+
+  .lead-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .lead-inner .section-tag { justify-content: center; }
+  .lead-inner .section-tag::before { display: none; }
+
+  .lead-inner .section-h2 { margin-bottom: 1rem; }
+  .lead-inner .section-lead { margin: 0 auto 3rem; text-align: left; }
+
+  .lead-form {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 3rem;
+    clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);
+    text-align: left;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+  .form-group label {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--muted);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    color: var(--white);
+    padding: 12px 16px;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--accent);
+  }
+  .form-group select { appearance: none; cursor: pointer; }
+  .form-group textarea { resize: vertical; min-height: 80px; }
+
+  .form-full { grid-column: 1 / -1; }
+
+  .form-submit {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .form-note {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--muted);
+    letter-spacing: 1px;
+  }
+
+  /* ── CONTACT ── */
+  .contact { background: var(--deep); }
+
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    margin-top: 4rem;
+  }
+
+  .contact-info h3 {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    color: var(--white);
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+  }
+  .contact-info p { font-size: 0.9rem; color: var(--muted); line-height: 1.8; margin-bottom: 2rem; }
+
+  .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    text-decoration: none;
+    color: var(--text);
+    transition: all 0.2s;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
+  }
+  .contact-link:hover {
+    border-color: var(--accent);
+    color: var(--white);
+    background: var(--card);
+  }
+  .contact-link .link-icon { font-size: 1.2rem; }
+  .contact-link .link-text { font-size: 0.9rem; font-weight: 600; }
+  .contact-link .link-sub {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--muted);
+    letter-spacing: 1px;
+  }
+  .contact-link-inner { display: flex; flex-direction: column; }
+
+  .contact-cta-box {
+    background: linear-gradient(135deg, rgba(0,194,255,0.1), rgba(0,194,255,0.03));
+    border: 1px solid rgba(0,194,255,0.25);
+    padding: 3rem;
+    clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);
+  }
+
+  .contact-cta-box h3 {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    color: var(--white);
+    letter-spacing: 2px;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+  .contact-cta-box h3 span { color: var(--accent); }
+  .contact-cta-box p { font-size: 0.9rem; color: var(--muted); margin-bottom: 2rem; line-height: 1.7; }
+
+  .calendly-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: var(--black);
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: 0.95rem;
+    padding: 18px 40px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    justify-content: center;
+  }
+  .calendly-btn:hover {
+    background: var(--white);
+    transform: translateY(-2px);
+  }
+
+  .guarantee {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 1.2rem;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--muted);
+    letter-spacing: 1px;
+  }
+  .guarantee::before {
+    content: '🔒';
+    font-size: 0.9rem;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--black);
+    border-top: 1px solid var(--border);
+    padding: 60px 5% 30px;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .footer-brand .nav-logo { display: block; margin-bottom: 1rem; }
+  .footer-brand p { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
+
+  .footer-col h4 {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--accent);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .footer-col ul a {
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-col ul a:hover { color: var(--white); }
+
+  .footer-bottom {
+    border-top: 1px solid var(--border);
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-bottom p { font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); letter-spacing: 1px; }
+  .footer-location {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .loc-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--green);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  /* ── UPDATE BANNER ── */
+  .update-notice {
+    background: linear-gradient(90deg, rgba(255,107,43,0.15), rgba(255,107,43,0.05));
+    border: 1px solid rgba(255,107,43,0.4);
+    border-left: 4px solid var(--accent2);
+    padding: 1rem 1.5rem;
+    margin: 2rem 5%;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--accent2);
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .pain-grid, .services-grid, .cases-grid { grid-template-columns: 1fr; }
+    .services-header, .why-layout, .founder-layout, .contact-layout { grid-template-columns: 1fr; }
+    .process-steps { grid-template-columns: 1fr 1fr; }
+    .hero-stats { gap: 1.5rem; }
+    .footer-top { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    nav .nav-links { display: none; }
+    .founder-card { width: 100%; }
+    .founder-photo-wrap { width: 100%; }
+  }
+</style>
+  <!-- Favicon Elements -->
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
 </head>
+<body>
 
-<body class="text-gray-800">
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">SYNCHRO<span>EDGE</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#cases">Projects</a></li>
+    <li><a href="#founder">About</a></li>
+    <li><a href="#contact" class="nav-cta">Book a Call</a></li>
+  </ul>
+</nav>
 
-<header class="border-b sticky top-0 bg-white z-50">
-  <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
-    <a href="#" class="flex items-center">
-      <img src="logo.png" alt="SynchroEdge Logo" class="h-12 md:h-16 w-auto">
-    </a>
-    
-    <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-600">
-      <a href="#services" class="hover:text-[#0089d1] transition">Services</a>
-      <a href="#workflow" class="hover:text-[#0089d1] transition">Workflow</a>
-      <a href="#cases" class="hover:text-[#0089d1] transition">Case Studies</a>
-      <a href="#contact" class="hover:text-[#0089d1] transition">Contact</a>
-    </nav>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-tag">NYC & NJ BIM Experts — Est. 2024</div>
+  <h1>
+    CLASH&#8209;FREE.<br/>
+    <span class="accent">COORD&#8209;</span><br/>
+    <span class="accent2">INATED.</span><br/>
+    DELIVERED.
+  </h1>
+  <p class="hero-sub">
+    8 years. 60+ completed Revit projects. We are the BIM coordination partner architecture firms and contractors call when they cannot afford errors in the field.
+  </p>
+  <div class="hero-stats">
+    <div class="stat-block">
+      <div class="stat-num">8<span>+</span></div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-num">60<span>+</span></div>
+      <div class="stat-label">Revit Projects</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-num">0</div>
+      <div class="stat-label">Field Failures</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-num">48<span>h</span></div>
+      <div class="stat-label">Avg Response Time</div>
+    </div>
   </div>
-</header>
+  <div class="hero-btns">
+    <a href="#contact" class="btn-primary">Book Free Consultation</a>
+    <a href="#cases" class="btn-secondary">View Our Work</a>
+  </div>
+  <div class="scroll-indicator">
+    <div class="scroll-line"></div>
+    Scroll to explore
+  </div>
+</section>
 
-<section class="relative bg-gray-900 text-white overflow-hidden">
-  <img
-    src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=80"
-    alt="BIM Modeling"
-    class="absolute inset-0 w-full h-full object-cover opacity-20"
-  >
-  <div class="relative max-w-7xl mx-auto px-6 py-32">
-    <h1 class="text-5xl md:text-6xl font-bold max-w-3xl fade-in">
-      Premium BIM Modeling & <span class="text-[#0089d1]">Outsourcing</span> Partner
-    </h1>
-    <p class="mt-6 text-xl text-gray-300 max-w-2xl fade-in">
-      Trusted by construction firms across the US, UK, and Middle East
-      for high-accuracy BIM delivery and secure offshore execution.
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="marquee-item">MEP COORDINATION</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">CLASH DETECTION</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">REVIT MODELING</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">CONSTRUCTION DOCUMENTS</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">SHOP DRAWINGS</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">CFS MODELING</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">NAVISWORKS</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">LOD 100–500</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">NYC / NJ MARKET</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">MEP COORDINATION</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">CLASH DETECTION</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">REVIT MODELING</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">CONSTRUCTION DOCUMENTS</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">SHOP DRAWINGS</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">CFS MODELING</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">NAVISWORKS</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">LOD 100–500</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">NYC / NJ MARKET</span><span class="marquee-dot">◆</span>
+  </div>
+</div>
+
+<!-- PAIN SECTION -->
+<section class="pain" id="pain">
+  <div class="section-tag">The Problem We Solve</div>
+  <h2 class="section-h2">COORDINATION FAILURES<br/>COST YOU EVERYTHING</h2>
+  <p class="section-lead">Every undetected clash, every uncoordinated MEP system, every shop drawing error — they don't disappear. They compound. They become RFIs, change orders, delays, and lawsuits.</p>
+
+  <div class="pain-grid">
+    <div class="pain-card">
+      <span class="pain-icon">⚡</span>
+      <h3>Clashes Found On-Site</h3>
+      <p>Your ductwork runs through your structural beam. Your GC finds it on Day 1 of MEP rough-in. The clock stops. The budget bleeds. This is 100% preventable with proper BIM coordination.</p>
+    </div>
+    <div class="pain-card">
+      <span class="pain-icon">📋</span>
+      <h3>RFI Avalanche</h3>
+      <p>When consultants are working in silos with uncoordinated models, RFIs pile up during construction. Each one costs time, money, and trust with your contractor and client.</p>
+    </div>
+    <div class="pain-card">
+      <span class="pain-icon">💸</span>
+      <h3>Change Order Bleeding</h3>
+      <p>The average coordination failure in commercial construction generates $28,000–$80,000 in change orders. On a multifamily project, that number multiplies with every floor.</p>
+    </div>
+    <div class="pain-card">
+      <span class="pain-icon">⏱️</span>
+      <h3>Schedule Collapse</h3>
+      <p>Every unresolved clash discovered in the field stops work while consultants confer. In NYC construction where labor costs run $150–$300/hour per trade, delays are catastrophic.</p>
+    </div>
+  </div>
+
+  <div class="pain-callout">
+    <div class="callout-num">$31B</div>
+    <div class="callout-text">
+      <h4>Annual Rework Cost in US Construction</h4>
+      <p>The majority is directly traceable to poor BIM coordination and clash detection failures. SynchroEdge exists to make sure none of that cost comes from your project.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header">
+    <div>
+      <div class="section-tag">What We Deliver</div>
+      <h2 class="section-h2">FULL-SUITE<br/>BIM SERVICES</h2>
+    </div>
+    <p class="section-lead">Every service we offer is built around one outcome: your project reaches the field coordinated, clash-free, and construction-ready. We do not offer generic BIM — we deliver precision coordination.</p>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-num">01</div>
+      <div class="service-icon-wrap">🔧</div>
+      <h3>MEP Coordination & Clash Detection</h3>
+      <p>Full MEP coordination in Revit, federated model build, Navisworks clash detection with prioritized resolution reports. We catch every conflict before your GC does.</p>
+      <span class="service-tag">Revit · Navisworks</span>
+    </div>
+    <div class="service-card">
+      <div class="service-num">02</div>
+      <div class="service-icon-wrap">🏗️</div>
+      <h3>Architectural BIM Modeling</h3>
+      <p>LOD 100–500 architectural Revit models built to your firm's standards and design intent. From schematic through construction documentation.</p>
+      <span class="service-tag">LOD 100–500</span>
+    </div>
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <div class="service-icon-wrap">⚙️</div>
+      <h3>Structural & CFS Modeling</h3>
+      <p>Cold-formed steel and structural BIM modeling for mid-rise residential and commercial. Coordinated with architectural and MEP for zero structural conflicts.</p>
+      <span class="service-tag">CFS · Structural</span>
+    </div>
+    <div class="service-card">
+      <div class="service-num">04</div>
+      <div class="service-icon-wrap">📐</div>
+      <h3>Construction Documents</h3>
+      <p>Permit-ready, contractor-ready documentation sets extracted from coordinated Revit models. NYC DOB filing standards. Buildable from day one.</p>
+      <span class="service-tag">NYC DOB Ready</span>
+    </div>
+    <div class="service-card">
+      <div class="service-num">05</div>
+      <div class="service-icon-wrap">📄</div>
+      <h3>Shop Drawings</h3>
+      <p>Fabrication-level MEP and structural shop drawings produced from coordinated BIM models — not redrawn from 2D. Accuracy guaranteed at LOD 400.</p>
+      <span class="service-tag">LOD 400</span>
+    </div>
+    <div class="service-card">
+      <div class="service-num">06</div>
+      <div class="service-icon-wrap">🌐</div>
+      <h3>Civil BIM & Site Coordination</h3>
+      <p>Site coordination, grading, utilities, and civil infrastructure modeling. Full coordination with building systems for zero conflicts at the site boundary.</p>
+      <span class="service-tag">Civil · Site</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="section-tag">How We Work</div>
+  <h2 class="section-h2">THE SYNCHROEDGE<br/>COORDINATION PROCESS</h2>
+  <p class="section-lead">A proven 5-phase process developed across 60+ projects. No surprises. No scope creep. No deliverable that isn't construction-ready.</p>
+
+  <div class="process-steps">
+    <div class="process-step">
+      <div class="step-circle">01</div>
+      <h4>Project Intake & LOD Agreement</h4>
+      <p>We review drawings, define LOD targets, align on software standards and deliverable formats before a single element is modeled.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-circle">02</div>
+      <h4>Federated Model Build</h4>
+      <p>Architecture, MEP, and structural models built or integrated in Revit. All consultants working from one source of truth.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-circle">03</div>
+      <h4>Navisworks Clash Detection</h4>
+      <p>Full clash matrix delivered with severity-ranked resolution recommendations. Not just a number — an actionable coordination report.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-circle">04</div>
+      <h4>Coordination Review Cycles</h4>
+      <p>We run coordination until the model is clean. Every clash resolved, every consultant aligned, every system coordinated.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-circle">05</div>
+      <h4>Construction-Ready Delivery</h4>
+      <p>Permitted documentation sets, shop drawings, and as-built-ready models. Handed off to your team ready for the field.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why" id="why">
+  <div class="section-tag">Why SynchroEdge</div>
+  <h2 class="section-h2">NOT ANOTHER<br/>BIM VENDOR</h2>
+
+  <div class="why-layout">
+    <div class="why-visual">
+      <div class="bim-card bim-main">
+        <div class="section-tag" style="margin-bottom:0.8rem">Live Project Model</div>
+        <h4 style="color:var(--white);font-size:0.95rem;margin-bottom:0.5rem;">NYC Multifamily — 6 Story Residential</h4>
+        <p style="font-size:0.8rem;color:var(--muted);">Jersey City, NJ · LOD 350 · MEP + Structural Coordinated</p>
+        <div class="code-block">
+<span class="code-key">clash_count</span>: <span class="code-val">247</span> → <span class="code-val">0</span><br/>
+<span class="code-key">model_phase</span>: <span class="code-str">"Construction Ready"</span><br/>
+<span class="code-key">rfi_count</span>: <span class="code-val">0</span> <span style="color:var(--green)">// pre-construction</span><br/>
+<span class="code-key">lod</span>: <span class="code-val">350</span><br/>
+<span class="code-key">disciplines</span>: <span class="code-str">["ARCH","MEP","STR","CIVIL"]</span><br/>
+<span class="code-key">status</span>: <span class="code-str">"✓ CLASH FREE"</span>
+        </div>
+      </div>
+      <div class="bim-card bim-stat-card">
+        <div class="stat-n">247</div>
+        <div class="stat-l">Clashes Resolved Pre-Construction</div>
+      </div>
+      <div class="bim-card bim-badge">
+        <span class="badge-icon">🏆</span>
+        <p>Zero Field RFIs Reported</p>
+      </div>
+    </div>
+
+    <div>
+      <ul class="why-list">
+        <li class="why-item">
+          <div class="why-icon">🎯</div>
+          <div>
+            <h4>We Specialize. We Don't Generalize.</h4>
+            <p>We are not an outsourcing shop offering "IT, admin, and BIM." We do one thing — BIM coordination — and we do it at a level that protects your project, your reputation, and your budget.</p>
+          </div>
+        </li>
+        <li class="why-item">
+          <div class="why-icon">🏙️</div>
+          <div>
+            <h4>We Know the NYC/NJ Market</h4>
+            <p>NYC DOB filing requirements. NYC Building Code constraints. The pace of a Manhattan renovation. NJ multifamily permitting. We are not a generic offshore vendor — we understand your construction environment.</p>
+          </div>
+        </li>
+        <li class="why-item">
+          <div class="why-icon">⚡</div>
+          <div>
+            <h4>Senior Expertise, Not Junior Drafting</h4>
+            <p>8 years of hands-on Revit across 60+ real projects. Our work is reviewed by a senior BIM specialist, not delegated to junior staff. You get expert-level output on every deliverable.</p>
+          </div>
+        </li>
+        <li class="why-item">
+          <div class="why-icon">🔗</div>
+          <div>
+            <h4>We Work As Your Team Extension</h4>
+            <p>We integrate into your project workflow, communicate in your software ecosystem, and deliver to your standards. No learning curve for your team. No project disruption.</p>
+          </div>
+        </li>
+        <li class="why-item">
+          <div class="why-icon">💰</div>
+          <div>
+            <h4>Project-Based Pricing. No Retainers.</h4>
+            <p>You engage us per project, scoped specifically to your coordination needs. No long-term commitment. No bloated overhead. Pay for the work that generates value.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section class="cases" id="cases">
+  <div class="section-tag">Proof of Work</div>
+  <h2 class="section-h2">PROJECT<br/>ENGAGEMENTS</h2>
+  <p class="section-lead">Real coordination challenges. Real deliverables. Real outcomes. Each engagement below reflects the standard of work SynchroEdge delivers on every project.</p>
+
+  <div class="cases-grid">
+    <div class="case-card">
+      <div class="case-type">Multifamily Residential</div>
+      <h3>6-Story Multifamily — Jersey City, NJ</h3>
+      <p>Full MEP coordination for a 6-story ground-up residential building. Federated model integrating architectural, structural, HVAC, plumbing, and electrical. 247 clashes identified and resolved pre-construction. GC reported zero MEP-related RFIs during rough-in phase.</p>
+      <div class="case-metrics">
+        <div class="metric">
+          <div class="metric-val">247</div>
+          <div class="metric-label">Clashes Resolved</div>
+        </div>
+        <div class="metric">
+          <div class="metric-val">0</div>
+          <div class="metric-label">Field RFIs</div>
+        </div>
+        <div class="metric">
+          <div class="metric-val">LOD 350</div>
+          <div class="metric-label">Delivery Standard</div>
+        </div>
+      </div>
+    </div>
+    <div class="case-card">
+      <div class="case-type">Institutional / Religious</div>
+      <h3>Synagogue Renovation — $8M Project, Manhattan</h3>
+      <p>BIM coordination and construction documentation for a major religious building renovation. Complex adaptive reuse — existing structure, new MEP systems, landmark constraints. Full Revit model coordinated with MEP engineers and structural consultants. Permit-ready documentation set delivered for NYC DOB filing.</p>
+      <div class="case-metrics">
+        <div class="metric">
+          <div class="metric-val">$8M</div>
+          <div class="metric-label">Project Value</div>
+        </div>
+        <div class="metric">
+          <div class="metric-val">LOD 400</div>
+          <div class="metric-label">Shop Drawings</div>
+        </div>
+        <div class="metric">
+          <div class="metric-val">DOB</div>
+          <div class="metric-label">Filing Ready</div>
+        </div>
+      </div>
+    </div>
+    <div class="case-card">
+      <div class="case-type">Commercial / Office-to-Residential</div>
+      <h3>Office Conversion — NYC Adaptive Reuse</h3>
+      <p>MEP coordination and CFS modeling for an office-to-residential conversion project. Structural uncertainty managed through LOD 350 CFS framing model. Full MEP system redesign coordinated in Revit. New plumbing stacks, electrical distribution, and HVAC routed around existing structural elements — all clash-detected before contractor mobilization.</p>
+      <div class="case-metrics">
+        <div class="metric">
+          <div class="metric-val">CFS</div>
+          <div class="metric-label">Framing Model</div>
+        </div>
+        <div class="metric">
+          <div class="metric-val">100%</div>
+          <div class="metric-label">Clash Free</div>
+        </div>
+        <div class="metric">
+          <div class="metric-val">NYC</div>
+          <div class="metric-label">DOB Compliant</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="founder" id="founder">
+  <div class="section-tag">The Expert Behind SynchroEdge</div>
+  <h2 class="section-h2">BUILT BY A<br/>PRACTITIONER</h2>
+
+  <div class="founder-layout">
+    <div class="founder-card">
+      <div class="founder-photo-wrap">
+        <div class="founder-placeholder">👤</div>
+        <div class="founder-photo-label">Add Your Photo Here</div>
+      </div>
+      <div class="founder-badges">
+        <div class="f-badge">Civil Engineer</div>
+        <div class="f-badge">8 Years BIM Experience</div>
+        <div class="f-badge">60+ Revit Projects</div>
+        <div class="f-badge">NYC/NJ Market Specialist</div>
+        <div class="f-badge">Revit · Navisworks · AutoCAD</div>
+      </div>
+    </div>
+
+    <div class="founder-content">
+      <blockquote>
+        "I have spent 8 years solving coordination failures for other firms.<br/>
+        <span>Now I solve them for yours.</span>"
+      </blockquote>
+      <p class="founder-bio">
+        I founded SynchroEdge after nearly a decade working inside complex BIM environments — multifamily residential, institutional buildings, religious renovations, civil infrastructure. 60+ completed Revit projects. Thousands of clashes detected and resolved. Hundreds of construction document sets delivered.
+      </p>
+      <p class="founder-bio">
+        I kept watching the same failure happen at different firms: exceptional designers producing projects that fell apart in coordination. Not because of bad design — because nobody was managing the gap between what was designed and what was documented and coordinated.
+      </p>
+      <p class="founder-bio">
+        SynchroEdge exists to close that gap. We are not a BIM outsourcing shop. We are a senior BIM coordination team embedded in your project workflow — from design development through construction documentation — making sure what leaves your office is buildable, coordinated, and clash-free.
+      </p>
+      <div class="tech-stack">
+        <span class="tech-tag">Revit</span>
+        <span class="tech-tag">Navisworks</span>
+        <span class="tech-tag">AutoCAD</span>
+        <span class="tech-tag">MEP Coordination</span>
+        <span class="tech-tag">CFS Modeling</span>
+        <span class="tech-tag">LOD 100–500</span>
+        <span class="tech-tag">Shop Drawings</span>
+        <span class="tech-tag">Civil BIM</span>
+        <span class="tech-tag">NYC DOB</span>
+        <span class="tech-tag">NJ Permitting</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD MAGNET -->
+<section class="lead-magnet" id="lead">
+  <div class="lead-inner">
+    <div class="section-tag">Free Coordination Audit</div>
+    <h2 class="section-h2">SEND US YOUR<br/>PROJECT. WE'LL FIND<br/>THE RISK FOR FREE.</h2>
+    <p class="section-lead">
+      Upload your drawings or describe your project below. Within 48 hours, we will send you a preliminary coordination risk assessment — identifying where your MEP, structural, and architectural systems are most likely to conflict. No charge. No obligation.
     </p>
-    <div class="mt-10 flex flex-wrap gap-4 fade-in">
-      <a href="https://wa.me/919731307972" target="_blank"
-         class="bg-green-600 px-8 py-4 rounded-lg font-semibold hover:bg-green-700 transition flex items-center gap-2">
-        WhatsApp Us
-      </a>
-      <a href="#services"
-         class="border border-gray-400 px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition">
-        View Services
-      </a>
+
+    <div class="lead-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Your Name *</label>
+          <input type="text" placeholder="John Smith"/>
+        </div>
+        <div class="form-group">
+          <label>Company Name *</label>
+          <input type="text" placeholder="Smith Architecture LLC"/>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" placeholder="john@smitharch.com"/>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="+1 (212) 000-0000"/>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>You Are A *</label>
+          <select>
+            <option>Architect / Architecture Firm</option>
+            <option>General Contractor</option>
+            <option>MEP Engineer</option>
+            <option>Developer / Owner</option>
+            <option>Civil Engineer</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Project Type *</label>
+          <select>
+            <option>Multifamily Residential</option>
+            <option>Commercial / Office</option>
+            <option>Institutional / Religious</option>
+            <option>Office-to-Residential Conversion</option>
+            <option>Mixed-Use</option>
+            <option>Civil / Infrastructure</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group form-full">
+          <label>Project Description</label>
+          <textarea placeholder="Briefly describe your project — location, size, current phase, and your biggest coordination concern..."></textarea>
+        </div>
+      </div>
+      <div class="form-submit">
+        <button class="calendly-btn" onclick="alert('Connect this to your form backend or Calendly!')">
+          Get My Free Coordination Risk Assessment →
+        </button>
+      </div>
+      <div class="guarantee">
+        We respond within 48 hours. No sales pitch. Just a straight assessment of your coordination risk.
+      </div>
     </div>
   </div>
 </section>
 
-<section id="services" class="py-24 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-6">
-    <h2 class="text-3xl font-bold mb-16 text-center text-gray-900">Core Services</h2>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-white p-10 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 fade-in">
-        <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center text-[#0089d1] mb-6">
-           <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
-        </div>
-        <h3 class="font-bold text-xl mb-4">BIM Modeling</h3>
-        <p class="text-gray-600 leading-relaxed">3D, 4D, 5D & 6D BIM services for Architecture, Structure & MEP with clash detection and BOQs.</p>
-      </div>
-      <div class="bg-white p-10 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 fade-in">
-        <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center text-[#0089d1] mb-6">
-           <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-        </div>
-        <h3 class="font-bold text-xl mb-4">BIM Outsourcing</h3>
-        <p class="text-gray-600 leading-relaxed">Dedicated offshore BIM teams aligned to your standards, timelines, and software ecosystem.</p>
-      </div>
-      <div class="bg-white p-10 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 fade-in">
-        <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center text-[#0089d1] mb-6">
-           <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 21h6l-.75-4M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-        </div>
-        <h3 class="font-bold text-xl mb-4">Technology & Back Office</h3>
-        <p class="text-gray-600 leading-relaxed">IT, KPO, finance, admin, and digital services delivered securely at scale.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-tag">Let's Work Together</div>
+  <h2 class="section-h2">READY TO<br/>COORDINATE?</h2>
 
-<section class="py-16 bg-white">
-  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-6">
-    <img class="rounded-xl shadow-lg h-64 w-full object-cover fade-in" 
-      src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=800&q=80" 
-      alt="Construction Planning">
-    <img class="rounded-xl shadow-lg h-64 w-full object-cover fade-in" 
-      src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" 
-      alt="BIM Coordination">
-    <img class="rounded-xl shadow-lg h-64 w-full object-cover fade-in" 
-      src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" 
-      alt="MEP Coordination">
-  </div>
-</section>
+  <div class="contact-layout">
+    <div class="contact-info">
+      <h3>GET IN TOUCH</h3>
+      <p>We work with architecture firms, general contractors, MEP engineers, and developers across the NYC/NJ metro. Reach out through any channel below — we respond within 24 hours.</p>
 
-<section id="workflow" class="py-24 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our BIM Workflow</h2>
-      <p class="text-gray-500 max-w-2xl mx-auto">A streamlined process ensuring precision at every stage.</p>
-    </div>
-
-    <div class="relative">
-      <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-200 -translate-y-1/2 z-0"></div>
-      <div class="grid grid-cols-1 md:grid-cols-5 gap-8 relative z-10">
-        
-        <div class="flex flex-col items-center group">
-          <div class="w-16 h-16 bg-white text-[#0089d1] border-2 border-gray-100 rounded-2xl flex items-center justify-center mb-4 shadow-sm group-hover:bg-[#0089d1] group-hover:text-white transition-all duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg>
+      <div class="contact-links">
+        <a href="mailto:info@synchroedge.com" class="contact-link">
+          <span class="link-icon">📧</span>
+          <div class="contact-link-inner">
+            <span class="link-text">info@synchroedge.com</span>
+            <span class="link-sub">Email — 24hr Response Guaranteed</span>
           </div>
-          <p class="text-xs font-bold text-[#0089d1] uppercase mb-1">Phase 01</p>
-          <p class="font-bold text-gray-800">Input Review</p>
-        </div>
-
-        <div class="flex flex-col items-center group text-center">
-          <div class="w-16 h-16 bg-white text-[#0089d1] border-2 border-gray-100 rounded-2xl flex items-center justify-center mb-4 shadow-sm group-hover:bg-[#0089d1] group-hover:text-white transition-all duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" /></svg>
+        </a>
+        <a href="tel:+12125550000" class="contact-link">
+          <span class="link-icon">📞</span>
+          <div class="contact-link-inner">
+            <span class="link-text">+1 (212) 000-0000</span>
+            <span class="link-sub">Replace with your US number</span>
           </div>
-          <p class="text-xs font-bold text-[#0089d1] uppercase mb-1">Phase 02</p>
-          <p class="font-bold text-gray-800">3D Modeling</p>
-        </div>
-
-        <div class="flex flex-col items-center group text-center">
-          <div class="w-16 h-16 bg-white text-[#0089d1] border-2 border-gray-100 rounded-2xl flex items-center justify-center mb-4 shadow-sm group-hover:bg-[#0089d1] group-hover:text-white transition-all duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" /></svg>
+        </a>
+        <a href="https://linkedin.com/company/synchroedge" class="contact-link" target="_blank">
+          <span class="link-icon">💼</span>
+          <div class="contact-link-inner">
+            <span class="link-text">LinkedIn — SynchroEdge</span>
+            <span class="link-sub">Connect & Follow</span>
           </div>
-          <p class="text-xs font-bold text-[#0089d1] uppercase mb-1">Phase 03</p>
-          <p class="font-bold text-gray-800">Clash Detection</p>
-        </div>
-
-        <div class="flex flex-col items-center group text-center">
-          <div class="w-16 h-16 bg-white text-[#0089d1] border-2 border-gray-100 rounded-2xl flex items-center justify-center mb-4 shadow-sm group-hover:bg-[#0089d1] group-hover:text-white transition-all duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0V1.5h7.5v15" /></svg>
+        </a>
+        <a href="#" class="contact-link">
+          <span class="link-icon">📍</span>
+          <div class="contact-link-inner">
+            <span class="link-text">New York / New Jersey</span>
+            <span class="link-sub">Serving NYC Metro — Global Capability</span>
           </div>
-          <p class="text-xs font-bold text-[#0089d1] uppercase mb-1">Phase 04</p>
-          <p class="font-bold text-gray-800">Quantification</p>
-        </div>
+        </a>
+      </div>
+    </div>
 
-        <div class="flex flex-col items-center group text-center">
-          <div class="w-16 h-16 bg-white text-[#0089d1] border-2 border-gray-100 rounded-2xl flex items-center justify-center mb-4 shadow-sm group-hover:bg-[#0089d1] group-hover:text-white transition-all duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-          </div>
-          <p class="text-xs font-bold text-[#0089d1] uppercase mb-1">Phase 05</p>
-          <p class="font-bold text-gray-800">Client Delivery</p>
-        </div>
-
+    <div class="contact-cta-box">
+      <h3>BOOK A FREE<br/><span>15-MINUTE</span><br/>DISCOVERY CALL</h3>
+      <p>Tell us about your project. We will tell you exactly where the coordination risks are and how we can eliminate them before they cost you money in the field. No pitch. Just straight talk from a senior BIM specialist.</p>
+      <button class="calendly-btn" onclick="alert('Link this to your Calendly booking page')">
+        📅 Schedule My Free Call →
+      </button>
+      <div class="guarantee">
+        15 minutes. Free. No obligation. Cancel anytime.
       </div>
     </div>
   </div>
 </section>
 
-<section id="cases" class="py-24 bg-white">
-  <div class="max-w-7xl mx-auto px-6">
-    <h2 class="text-3xl font-bold mb-16 text-center text-gray-900">Sample Engagements</h2>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 fade-in">
-        <h4 class="font-bold text-lg mb-2">Commercial Tower</h4>
-        <p class="text-sm text-gray-600 leading-relaxed">LOD 400 BIM for MEP coordination – reduced site clashes by 35%.</p>
-      </div>
-      <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 fade-in">
-        <h4 class="font-bold text-lg mb-2">Residential Development</h4>
-        <p class="text-sm text-gray-600 leading-relaxed">5D BIM & BOQs for cost planning across 3 towers.</p>
-      </div>
-      <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 fade-in">
-        <h4 class="font-bold text-lg mb-2">International Consultant</h4>
-        <p class="text-sm text-gray-600 leading-relaxed">Dedicated offshore BIM team supporting 20+ projects.</p>
-      </div>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="#" class="nav-logo">SYNCHRO<span>EDGE</span></a>
+      <p>Full-service BIM coordination for architecture firms, contractors, and developers in the NYC/NJ metro. 8 years. 60+ projects. Zero coordination failures.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">MEP Coordination</a></li>
+        <li><a href="#services">Clash Detection</a></li>
+        <li><a href="#services">Architectural BIM</a></li>
+        <li><a href="#services">Structural & CFS</a></li>
+        <li><a href="#services">Construction Documents</a></li>
+        <li><a href="#services">Shop Drawings</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#founder">About</a></li>
+        <li><a href="#cases">Projects</a></li>
+        <li><a href="#process">Our Process</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#lead">Free Audit</a></li>
+      </ul>
     </div>
   </div>
-</section>
-
-<section id="contact" class="bg-gray-900 text-white py-24">
-  <div class="max-w-7xl mx-auto px-6 text-center">
-    <h2 class="text-4xl font-bold mb-6">Let’s Work Together</h2>
-    <p class="text-gray-400 mb-10 text-lg">Ready to scale your BIM operations? Connect with our team today.</p>
-    <div class="flex flex-col md:flex-row justify-center gap-8">
-      <div class="bg-gray-800/50 p-6 rounded-xl">
-        <p class="text-gray-400 text-sm mb-1">Email Us</p>
-        <a href="mailto:info@synchroedge.com" class="text-xl font-medium hover:text-[#0089d1] transition">info@synchroedge.com</a>
-      </div>
-      <div class="bg-gray-800/50 p-6 rounded-xl">
-        <p class="text-gray-400 text-sm mb-1">Direct Chat</p>
-        <a href="https://wa.me/919731307972" target="_blank" class="text-xl font-medium hover:text-[#0089d1] transition">WhatsApp Us</a>
-      </div>
+  <div class="footer-bottom">
+    <p>© 2026 SynchroEdge BIM Services. All rights reserved.</p>
+    <div class="footer-location">
+      <div class="loc-dot"></div>
+      NYC / NJ Metro — Global Capability
     </div>
   </div>
-</section>
-
-<footer class="py-10 text-center text-sm text-gray-500 bg-white border-t">
-  © 2026 SynchroEdge | BIM Modeling & Outsourcing Partners
 </footer>
-
-<script>
-  const elements = document.querySelectorAll('.fade-in');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-      }
-    });
-  }, { threshold: 0.1 });
-  elements.forEach(el => observer.observe(el));
-</script>
 
 </body>
 </html>
